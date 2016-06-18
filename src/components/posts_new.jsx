@@ -1,7 +1,8 @@
-import React, {PropTypes} from "react";
+import React from "react";
 import {reduxForm} from "redux-form";
-import {Link} from "react-router";
+import {Link, browserHistory} from "react-router";
 import {createPosts} from "../actions/index";
+// import React, {PropTypes} from "react";
 class PostsNew extends React.Component {
     // static contextTypes = {
     //     router:PropTypes.object
@@ -10,7 +11,8 @@ class PostsNew extends React.Component {
     onSubmit(props) {
         this.props.createPosts(props)
         .then(()=> {
-            this.context.router.push('/');
+            // this.context.router.push('/');
+            browserHistory.push('/');
         });
     }
     
